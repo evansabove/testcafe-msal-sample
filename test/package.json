@@ -1,0 +1,20 @@
+{
+  "name": "test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "dependencies": {
+    "testcafe": "^1.8.1"
+  },
+  "devDependencies": {
+    "testcafe": "1.8.1"
+  },
+  "scripts": {
+    "test": "testcafe chrome tests/ --selector-timeout 10000 --assertion-timeout 10000"
+  },
+  "author": "",
+  "license": "ISC"
+}
