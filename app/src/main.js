@@ -4,6 +4,8 @@ import * as Msal from "msal";
 
 Vue.config.productionTip = false
 
+console.log("App is loading")
+
 const msalConfig = {
   auth: {
       clientId: 'a1ed63c8-b3eb-4386-bf56-46a15d7694cc',
@@ -26,9 +28,11 @@ msalInstance.handleRedirectCallback((error, response) => {
 let isLoggedIn = msalInstance.getAccount() != null;
 
 if(!isLoggedIn) {
+  console.log("You aren't logged in.")
   msalInstance.loginRedirect();
 }
 else {
+  console.log("You're logged in!")
   new Vue({
     render: h => h(App, { props: { username: msalInstance.getAccount().name }}),
   }).$mount('#app')
